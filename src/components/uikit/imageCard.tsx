@@ -9,9 +9,7 @@ interface ImageCardProps {
 
 interface InterfaceData {
   name: string;
-  image: string;
-  id: number;
-  info: string;
+  image: {medium: string};
 }
 
 const styles = StyleSheet.create({
@@ -46,7 +44,7 @@ const ImageCard = ({data}: PropsWithChildren<ImageCardProps>) => {
   return (
     <View style={container}>
       <View style={sub}>
-        <Image style={cover} source={{uri: `${image}`}} />
+        <Image style={cover} source={{uri: `${image.medium}`}} />
       </View>
       <Text style={h1}>{name}</Text>
     </View>
